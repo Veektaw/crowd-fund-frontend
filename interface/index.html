@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Connect</title>
+    <script type="module" src="/interface/index.js"></script> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background: white;
+            margin: 15% auto;
+            padding: 20px;
+            width: 300px;
+            border-radius: 10px;
+        }
+        .wallet-option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .wallet-option:hover {
+            background: #f5f5f5;
+        }
+        .wallet-option img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .transaction-form {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            flex-grow: 1;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background: #f8f9fa;
+        }
+        .error {
+            background: #ffe6e6;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="connectButton">Connect Wallet</button>
+        <button id="balanceButton">Show Balance</button>
+        <button id="withdrawButton">Withdraw</button>
+
+        <div class="transaction-form">
+            <input type="text" id="amount" placeholder="Enter amount">
+            <button id="sendButton">Send</button>
+        </div>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <div id="walletModal" class="modal">
+        <div class="modal-content">
+            <h3>Select Wallet</h3>
+            <div class="wallet-option" data-wallet="metamask">
+                <img src="/api/placeholder/24/24" alt="MetaMask">
+                MetaMask
+            </div>
+            <div class="wallet-option" data-wallet="coinbase">
+                <img src="/api/placeholder/24/24" alt="Coinbase">
+                Coinbase Wallet
+            </div>
+            <div class="wallet-option" data-wallet="solana">
+                <img src="/api/placeholder/24/24" alt="Solana">
+                Phantom (Solana)
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
